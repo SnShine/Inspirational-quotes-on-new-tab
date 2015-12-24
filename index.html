@@ -4,17 +4,8 @@
 <head>
 <meta charset="utf-8" />
 <title>😎 Inspirational quote!</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 
-<style type="text/css">
-    body { font: 14px/1.3 verdana, arial, helvetica, sans-serif; }
-    h2 { font-size:1.2em; }
-    a:link { color:#33c; }
-    a:visited { color:#339; }
-    p { max-width: 60em; }
-
-    /* so linked image won't have border */
-    a img { border:none; }
-</style>
 
 <script type="text/javascript">
     // place your images in this array
@@ -28,18 +19,27 @@
         document.write(imgStr); document.close();
     }
 
+    var random_background_array = ['Elegant_Background-1.jpg', 'Elegant_Background-18.jpg', 'Elegant_Background-2.jpg', 'Elegant_Background-3.jpg', 'Elegant_Background-4.jpg', 'Elegant_Background-5.jpg', 'Elegant_Background-6.jpg', 'Elegant_Background-7.jpg']
+
+    function ChangeIt(bckAr, path) {
+        path = path || 'background_images/';
+        var num = Math.floor( Math.random() * bckAr.length );
+        document.body.background = 'background_images/'+ bckAr[ num ];
+        document.body.style.backgroundSize = "cover";// Background repeat
+    }
+
 </script>
 </head>
 
 
 <body>
-<h1 align="center">😇 Inspirational quote</h1>
+<h1 align="center" font-family="helvetica">😇 Inspirational quote</h1>
 </br>
 <div>
     <!-- This script segment displays an image from the array -->
     <script type="text/javascript">getRandomImage(random_images_array, 'images/')</script>
 </div>
-
-
 </body>
+
+<script type="text/javascript">ChangeIt(random_background_array, "background_images/")</script>
 </html>
